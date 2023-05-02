@@ -1,11 +1,24 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React from 'react';
+import { StyleSheet, View, Button, Text } from 'react-native';
 
-export default function App() {
+export default function StartScreen({ navigation }) {
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+      <Text style={styles.title}>Lobisomem Por Uma Noite</Text>
+      <View style={styles.buttonContainer}>
+        <Button
+          title="Jogar"
+          onPress={() => navigation.navigate('RoleSelection')}
+        />
+        <Button
+          title="Regras"
+          onPress={() => navigation.navigate('Rules')}
+        />
+        <Button
+          title="Personagens"
+          onPress={() => navigation.navigate('Characters')}
+        />
+      </View>
     </View>
   );
 }
@@ -13,8 +26,16 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
     justifyContent: 'center',
+    alignItems: 'center',
+  },
+  title: {
+    fontSize: 30,
+    fontWeight: 'bold',
+    marginBottom: 50,
+  },
+  buttonContainer: {
+    width: '80%',
+    marginBottom: 20,
   },
 });
