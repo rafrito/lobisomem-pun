@@ -1,6 +1,7 @@
 import React from 'react';
-import { StyleSheet, Text, View, ImageBackground  } from 'react-native';
+import { Text, View, ImageBackground  } from 'react-native';
 import CustomButton from '../components/CustomButton';
+import styles from '../styles/Home'
 
 export default function HomeScreen({ navigation }) {
   return (
@@ -15,20 +16,3 @@ export default function HomeScreen({ navigation }) {
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  title: {
-    fontSize: 24,
-    fontWeight: 'bold',
-    marginBottom: 20,
-    color: '#fff',
-  },
-  background: {
-    flex: 1,
-    resizeMode: 'cover',
-  },
-});
