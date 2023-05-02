@@ -1,13 +1,13 @@
 import React from 'react';
-import { TouchableOpacity, Text, StyleSheet } from 'react-native';
+import { StyleSheet, Text, TouchableOpacity } from 'react-native';
 
-const CustomButton = ({ text, onPress }) => {
+export default function CustomButton({ text, onPress }) {
   return (
     <TouchableOpacity style={styles.button} onPress={onPress}>
       <Text style={styles.text}>{text}</Text>
     </TouchableOpacity>
   );
-};
+}
 
 const styles = StyleSheet.create({
   button: {
@@ -22,5 +22,3 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
 });
-
-export default CustomButton;

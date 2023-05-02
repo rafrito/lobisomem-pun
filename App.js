@@ -1,34 +1,17 @@
-import React from 'react';
-import { StyleSheet, Text, View, ImageBackground  } from 'react-native';
-import CustomButton from './components/CustomButton';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import HomeScreen from './screens/Home';
+import CharacterListScreen from './screens/CharacterListScreen';
+
+const Stack = createStackNavigator();
 
 export default function App() {
   return (
-    <ImageBackground source={require('./images/home.jpg')} style={styles.background}>
-      <View style={styles.container}>
-        <Text style={styles.title}>Lobisomem Por Uma Noite</Text>
-        <CustomButton text="Iniciar jogo" onPress={() => console.log("Iniciando jogo...")} />
-        <CustomButton text="Regras" onPress={() => console.log("Iniciando jogo...")} />
-        <CustomButton text="Personagens" onPress={() => console.log("Iniciando jogo...")} />
-      </View>
-    </ImageBackground>
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="Home">
+        <Stack.Screen name="Home" component={HomeScreen} />
+        <Stack.Screen name="CharacterList" component={CharacterListScreen} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  title: {
-    fontSize: 24,
-    fontWeight: 'bold',
-    marginBottom: 20,
-    color: '#fff',
-  },
-  background: {
-    flex: 1,
-    resizeMode: 'cover',
-  },
-});
