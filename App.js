@@ -1,26 +1,14 @@
 import React from 'react';
-import { StyleSheet, View, Button, Text } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
+import CustomButton from './components/CustomButton';
 
-export default function StartScreen({ navigation }) {
+export default function App() {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Lobisomem{"\n"}por uma noite</Text>
-      <View style={styles.buttonContainer}>
-        <Button
-          title="Jogar"
-          onPress={() => navigation.navigate('RoleSelection')}
-        />
-        <View style={styles.separator} />
-        <Button
-          title="Regras"
-          onPress={() => navigation.navigate('Rules')}
-        />
-        <View style={styles.separator} />
-        <Button
-          title="Personagens"
-          onPress={() => navigation.navigate('Characters')}
-        />
-      </View>
+      <Text style={styles.title}>Lobisomem Por Uma Noite</Text>
+      <CustomButton text="Iniciar jogo" onPress={() => console.log("Iniciando jogo...")} />
+      <CustomButton text="Regras" onPress={() => console.log("Iniciando jogo...")} />
+      <CustomButton text="Personagens" onPress={() => console.log("Iniciando jogo...")} />
     </View>
   );
 }
@@ -28,20 +16,13 @@ export default function StartScreen({ navigation }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
+    backgroundColor: '#fff',
     alignItems: 'center',
+    justifyContent: 'center',
   },
   title: {
-    fontSize: 36,
+    fontSize: 24,
     fontWeight: 'bold',
-    marginBottom: 30,
-    textAlign: 'center',
-    paddingHorizontal: 30,
-  },
-  buttonContainer: {
-    width: '80%',
-  },
-  separator: {
-    height: 10,
+    marginBottom: 20,
   },
 });
